@@ -17,6 +17,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.whatley.pokedex.pokemonlist.PokemonListScreen
 import com.whatley.pokedex.ui.theme.PokedexTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,11 +29,15 @@ class MainActivity : ComponentActivity() {
             PokedexTheme {
                 //Navigation component to handle each screen in the app
                 val navController = rememberNavController()
-                NavHost(navController = navController, startDestination = "pokemon_list_screen"){
-                    //TODO: Decide if I want a home screen or not
+                NavHost(
+                    navController = navController,
+                    startDestination = "pokemon_list_screen"
+                ) {
                     //define single screens within the app
-                    composable(route = "pokemon_list_screen"){
-                        //TODO: Add composable here for list of Pokemon.
+                    composable(
+                        route = "pokemon_list_screen"
+                    ){
+                        PokemonListScreen(navController = navController)
                     }
                     composable(
                         //This acts like a url. The {} parameters pass the same named string

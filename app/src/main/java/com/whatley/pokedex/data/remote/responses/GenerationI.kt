@@ -1,6 +1,6 @@
 package com.whatley.pokedex.data.remote.responses
 
 data class GenerationI(
-    val red-blue: RedBlue,
+    val redblue: RedBlue,
     val yellow: Yellow
 )
